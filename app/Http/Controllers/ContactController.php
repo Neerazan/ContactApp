@@ -20,9 +20,21 @@ class ContactController extends Controller
 
 
     public function create(){
-        return view('contacts.create');
+        $companies = Company::orderBy('name')->pluck('name', 'id')->prepend('All Companies', '');
+        return view('contacts.create', compact('companies'));
     }
 
+    public function store(Request $request){
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'company_id' => 'required|exists:companies,id',
+            'phone'=>'required'
+        ]);
+        dd($request->except('_token'));
+    }
 
     public function show($id){
         $contact =  Contact::find($id);
