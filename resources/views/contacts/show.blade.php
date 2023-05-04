@@ -58,7 +58,7 @@
                                     <hr>
                                     <div class="form-group row mb-0">
                                         <div class="col-md-9 offset-md-3">
-                                            <a href="#" class="btn btn-outline-success">Edit</a>
+                                            <a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-outline-success">Edit</a>
                                             <a href="#" class="btn btn-outline-danger">Delete</a>
                                             <a href="{{ route('contacts.index') }}" class="btn btn-outline-info">Cancel</a>
                                         </div>
