@@ -73,3 +73,37 @@ ul.pagination {
 /*    color: #28a745 !important;*/
 /*}*/
 
+
+/*animation in alert message */
+
+/*.alert {*/
+/*    opacity: 0;*/
+/*    transition: opacity 0.5s ease-in-out;*/
+/*}*/
+
+/*.alert.show {*/
+/*    opacity: 1;*/
+/*}*/
+
+/*@keyframes fadeOut {*/
+/*    0% {*/
+/*        opacity: 1;*/
+/*    }*/
+/*    100% {*/
+/*        opacity: 0;*/
+/*    }*/
+/*}*/
+
+/*.fade-out {*/
+/*    animation: fadeOut 0.5s ease-in-out forwards;*/
+/*}*/
+
+
+.page-item.active .page-link{
+    color: white;
+    background-color: #435d7d;
+    border-color: #435d7d;
+}
+.page-link{
+    color: black;
+}

@@ -34,7 +34,17 @@
                                 </thead>
                                 <tbody>
                                     @if($message = session('message'))
-                                        <div class="alert alert-info">{{ $message }}</div>
+                                        @php
+                                            $color = '';
+                                            if(session('action') == 'create') {
+                                                $color = 'success';
+                                            } elseif(session('action') == 'edit') {
+                                                $color = 'primary';
+                                            } elseif(session('action') == 'delete') {
+                                                $color = 'danger';
+                                            }
+                                        @endphp
+                                        <div class="alert alert-{{ $color }}" id="alert-time">{{ $message }}</div>
                                     @endif
                                     @if($contacts->count())
                                         @foreach($contacts as $index => $contact)

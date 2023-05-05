@@ -19,3 +19,56 @@ document.querySelectorAll('.btn-delete').forEach((button) =>{
         }
     })
 })
+
+// alert message session expiere
+setTimeout(() => {
+    const box = document.getElementById('alert-time');
+
+    //  removes element from DOM
+    box.style.display = 'none';
+
+    // hides element (still takes up space on the page)
+    // box.style.visibility = 'hidden';
+}, 2000);
+
+
+// refresh on search
+document.getElementById('btn-clear').addEventListener('click',() => {
+    let input = document.getElementById('search'),
+        select = document.getElementById('filter_company_id')
+
+    input.value = ""
+    select.selectedIndex = 0
+
+    window.location.href = window.location.href.split('?')[0]
+})
+
+const toggleClearButton = () => {
+   let query =  location.search,
+       pattern = /[?&]search=/,  //?company_id=1&search=
+       button = document.getElementById('btn-clear')
+
+    if (pattern.test(query)){
+        button.style.display = "block"
+    }
+    else{
+        button.style.display = "none"
+    }
+}
+toggleClearButton()
+
+
+
+
+
+//alert message animation
+
+// const alertTime = document.querySelector("#alert-time");
+
+// alertTime.classList.add("show");
+// setTimeout(function() {
+//     alertTime.classList.add("fade-out");
+//     setTimeout(function() {
+//         alertTime.remove();
+//     }, 3000);
+// }, 4000);
