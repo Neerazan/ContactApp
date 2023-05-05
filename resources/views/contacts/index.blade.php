@@ -21,7 +21,7 @@
 
                             @include('contacts._filter')
 
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover" id="table-dis">
                                 <thead>
                                 <tr>
                                     <th scope="col">Index</th>

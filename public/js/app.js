@@ -58,7 +58,7 @@ const toggleClearButton = () => {
 toggleClearButton()
 
 
-
+let button = document.getElementById('table-dis')
 
 
 //alert message animation
