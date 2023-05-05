@@ -8,4 +8,14 @@ document.getElementById('filter_company_id').addEventListener('change', function
     //http://127.0.0.1:8000/contacts?company_id=4
 })
 
-document.querySelectorAll('.btn-delete').forEach()
+document.querySelectorAll('.btn-delete').forEach((button) =>{
+    button.addEventListener('click', function (event){
+        event.preventDefault()
+        if (confirm("Are you sure?")){
+            let action = this.getAttribute('href')
+            let form = document.getElementById('form-delete')
+            form.setAttribute('action', action)
+            form.submit()
+        }
+    })
+})

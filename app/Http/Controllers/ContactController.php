@@ -32,7 +32,6 @@ class ContactController extends Controller
             'email' => 'required|email|unique:contacts,email',
             'address' => 'required|min:7 |max:255',
             'company_id' => 'required|exists:companies,id',
-//            'phone'=>'required|unique:contacts,phone|min:10|max:15'
             'phone' => ['required', 'unique:contacts,phone', 'regex:/^[^a-zA-Z]*\d+[^a-zA-Z]*$/', 'min:10', 'max:25'],
         ]);
         Contact::create($request->all());
@@ -59,7 +58,6 @@ class ContactController extends Controller
             'email' => 'required|email',
             'address' => 'required|min:7 |max:255',
             'company_id' => 'required|exists:companies,id',
-//            'phone'=>'required|unique:contacts,phone|min:10|max:15'
             'phone' => ['required', 'regex:/^[^a-zA-Z]*\d+[^a-zA-Z]*$/', 'min:10', 'max:25'],
         ]);
         $contact = Contact::findOrFail($id);

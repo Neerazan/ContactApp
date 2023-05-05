@@ -15,21 +15,27 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//welcome page route
 Route::get('/', function () {
     return view('welcome');
 });
+
+//index page of contact app
 Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
 
+//routes for create
 Route::post('contacts', [ContactController::class, 'store'])->name('contacts.store');
-
 Route::get('contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 
+//route for showing contact details
 Route::get('contacts/{id}', [ContactController::class, 'show'])->name('contacts.show');
 
+//Route for edit or update contact details
+Route::get('contacts/{id}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
 Route::put('contacts/{id}', [ContactController::class, 'update'])->name('contacts.update');
 
+//route for delete contact details
 Route::delete('contacts/{id}', [ContactController::class, 'destroy'])->name('contacts.destroy');
 
-Route::get('contacts/{id}/edit', [ContactController::class, 'edit'])->name('contacts.edit');
+
 
